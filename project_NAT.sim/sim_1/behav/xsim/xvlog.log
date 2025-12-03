@@ -1,0 +1,7 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_manager/NAT_Mgr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NAT_Mgr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_manager/avail_ppool.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module avail_ppool
+ERROR: [VRFC 10-3805] use of undefined macro 'ADDR_NAT_MAP_CNT' [C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_manager/avail_ppool.v:216]
+ERROR: [VRFC 10-4982] syntax error near ':' [C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_manager/avail_ppool.v:216]
+ERROR: [VRFC 10-8530] module 'avail_ppool' is ignored due to previous errors [C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_manager/avail_ppool.v:25]

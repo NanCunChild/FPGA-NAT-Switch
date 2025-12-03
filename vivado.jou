@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Wed Dec  3 18:47:55 2025
+# Process ID         : 9860
+# Current directory  : C:/Users/Administrator/project_NAT
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent23740 C:\Users\Administrator\project_NAT\project_NAT.xpr
+# Log file           : C:/Users/Administrator/project_NAT/vivado.log
+# Journal file       : C:/Users/Administrator/project_NAT\vivado.jou
+# Running On         : WINServ25
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz
+# CPU Frequency      : 2394 MHz
+# CPU Physical cores : 28
+# CPU Logical cores  : 56
+# Host memory        : 137324 MB
+# Swap memory        : 20401 MB
+# Total Virtual      : 157725 MB
+# Available Virtual  : 137139 MB
+#-----------------------------------------------------------
+start_guioopen_project C:/Users/Administrator/project_NAT/project_NAT.xprupdate_compile_order -fileset sources_1
+llaunch_simulation
