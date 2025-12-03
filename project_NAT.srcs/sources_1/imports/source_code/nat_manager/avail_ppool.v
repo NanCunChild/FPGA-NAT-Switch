@@ -1,3 +1,4 @@
+`include "top_define.v"
 // **************************************************************
 // COPYRIGHT(c)2024, Xidian University
 // All rights reserved.

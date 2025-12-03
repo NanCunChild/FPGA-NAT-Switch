@@ -1,7 +1,34 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/new/top_define.v" into library xil_defaultlib
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_manager/NAT_Mgr.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module NAT_Mgr
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_manager/avail_ppool.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module avail_ppool
-ERROR: [VRFC 10-3805] use of undefined macro 'ADDR_NAT_MAP_CNT' [C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_manager/avail_ppool.v:216]
-ERROR: [VRFC 10-4982] syntax error near ':' [C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_manager/avail_ppool.v:216]
-ERROR: [VRFC 10-8530] module 'avail_ppool' is ignored due to previous errors [C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_manager/avail_ppool.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_table/delete.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module delete
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_table/hash.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hash
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_table/inbound_rw.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module inbound_rw
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/new/ip_modules.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FIFO_generic_fwft
+INFO: [VRFC 10-311] analyzing module FIFO_w10_d1024_fwft
+INFO: [VRFC 10-311] analyzing module FIFO_w17_d128_fwft
+INFO: [VRFC 10-311] analyzing module FIFO_w48_d128_fwft
+INFO: [VRFC 10-311] analyzing module FIFO_w54_d128_fwft
+INFO: [VRFC 10-311] analyzing module FIFO_w22_d128_fwft
+INFO: [VRFC 10-311] analyzing module fifo_wxx_dxx_s
+INFO: [VRFC 10-311] analyzing module RAM_generic_tdp
+INFO: [VRFC 10-311] analyzing module ram_dp_d1024_w96
+INFO: [VRFC 10-311] analyzing module ram_dp_d1024_w16
+INFO: [VRFC 10-311] analyzing module ram_dp_d1024_w96_wrapper
+INFO: [VRFC 10-311] analyzing module ram_dp_d1024_w16_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_manager/manager.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module manager
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_table/nat_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nat_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_table/outbound_rw.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module outbound_rw
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.srcs/sim_1/new/tb_NAT_Mgr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_NAT_Mgr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
