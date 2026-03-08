@@ -1,27 +1,3 @@
-// **************************************************************
-// COPYRIGHT(c)2024, Xidian University
-// All rights reserved.
-//
-// IP LIB INDEX      :  
-// IP Name           :  
-// File name         :   manager.v
-// Module name       :   manager
-// Full name         :   
-//
-// Author            :  Chen Dilong 
-// Email             :   1523245790@qq.com
-// Data              :   2024/4/24
-// Version           : V 1.0 
-// 
-// Abstract          :  manage port number in use or recycle
-// Called by         : Father Module
-// 
-// Modification history
-// ------------------------------------------------------------------------------------------------------
-// //
-// $Log$
-//
-// *********************************************************************
 module manager
 (
     input  wire                  rst_n             ,      

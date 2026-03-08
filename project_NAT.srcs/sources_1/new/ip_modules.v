@@ -137,10 +137,16 @@ module RAM_generic_tdp #(
 );
     reg [WIDTH-1:0] mem [0:DEPTH-1];
 
+    // ============================================
+    // 方案：1 周期延迟 (Standard Synchronous RAM)
+    // 这是最通用的 BRAM 行为，读取数据在下一拍出来
+    // 配合 RTL 中的 ff3 流水线，时序通常正好对齐
+    // ============================================
+    
     // Port A
     always @(posedge clka) begin
         if (wea) mem[addra] <= dina;
-        douta <= mem[addra];
+        douta <= mem[addra]; // 读地址变 -> 下一拍时钟沿 -> 数据出
     end
 
     // Port B
@@ -148,6 +154,7 @@ module RAM_generic_tdp #(
         if (web) mem[addrb] <= dinb;
         doutb <= mem[addrb];
     end
+
 endmodule
 
 // =========================================================

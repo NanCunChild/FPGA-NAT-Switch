@@ -31,6 +31,7 @@ module inbound_rw (
 );
 
 reg           wan_vld_ff              ;
+reg           wan_vld_ff2             ;
 reg  [9 :0]   init_addr               ;
 reg           maint_vld_ff            ;
 wire          colldisn                ;
@@ -38,6 +39,9 @@ reg           maint_vld_co            ;
 reg  [9 :0]   outbound_addr_ff        ;
 reg           lookup_start         ;
 reg           lookup_start_ff      ;
+reg           lookup_start_ff2     ;
+reg           lookup_start_ff3     ;
+
 reg  [15: 0]  port_wan_maint_ff1   ;
 reg  [ 2: 0]  session_type_ff1     ;
 reg  [15: 0]  port_wan_maint_ff2   ;
@@ -46,9 +50,12 @@ reg  [ 2: 0]  session_type_ff2     ;
 reg  [15: 0]  port_wan_ff1       ;
 reg  [15: 0]  port_wan_ff2       ;
 reg  [15: 0]  port_wan_ff3       ;
+reg  [15: 0]  port_wan_ff4       ;
+
 reg  [ 2: 0]  port_wan_type_ff1  ;
 reg  [ 2: 0]  port_wan_type_ff2  ;
 reg  [ 2: 0]  port_wan_type_ff3  ;
+reg  [ 2: 0]  port_wan_type_ff4  ;
 
 
 assign colldisn = wan_vld && maint_vld_ff ;
@@ -92,11 +99,13 @@ end
 always @ (posedge clk or negedge rst_n)begin
     if(~rst_n) begin
         lookup_start_ff    <= 1'b0 ;
+        lookup_start_ff2   <= 1'b0 ;
         lookup_done        <= 1'b0 ;
     end
     else begin
         lookup_start_ff    <= lookup_start    ;
-        lookup_done        <= lookup_start_ff ;
+        lookup_start_ff2   <= lookup_start_ff ;
+        lookup_done        <= lookup_start_ff2 ;
     end
 end
 
@@ -133,6 +142,8 @@ always @ (posedge clk or negedge rst_n)begin
         port_wan_type_ff2    <=    3'b0      ;
         port_wan_ff3         <=   16'b0      ;
         port_wan_type_ff3    <=    3'b0      ;
+        port_wan_ff4         <=   16'b0      ;
+        port_wan_type_ff4    <=    3'b0      ;
       end
     else begin
         port_wan_ff1         <=  port_wan          ;
@@ -141,17 +152,21 @@ always @ (posedge clk or negedge rst_n)begin
         port_wan_type_ff2    <=  port_wan_type_ff1 ;
         port_wan_ff3         <=  port_wan_ff2      ;
         port_wan_type_ff3    <=  port_wan_type_ff2 ;
+        port_wan_ff4         <=  port_wan_ff3      ;
+        port_wan_type_ff4    <=  port_wan_type_ff3 ;
       end
 end
 
 always @ (posedge clk or negedge rst_n)begin
     if(~rst_n) begin
         wan_vld_ff          <=   1'b0       ;
+        wan_vld_ff2         <=   1'b0       ;
         outaddr_en          <=   1'b0       ;
       end
     else begin
         wan_vld_ff          <=  wan_vld     ;
-        outaddr_en          <=  wan_vld_ff  ;
+        wan_vld_ff2         <=  wan_vld_ff  ;
+        outaddr_en          <=  wan_vld_ff2  ;
     end
 end
 

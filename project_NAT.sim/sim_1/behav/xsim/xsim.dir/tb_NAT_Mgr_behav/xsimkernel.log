@@ -1,7 +1,0 @@
-Running: xsim.dir/tb_NAT_Mgr_behav/xsimk.exe -simmode gui -wdb tb_NAT_Mgr_behav.wdb -simrunnum 0 -socket 5133
-Design successfully loaded
-Design Loading Memory Usage: 11972 KB (Peak: 11972 KB)
-Design Loading CPU Usage: 61 ms
-Simulation completed
-Simulation Memory Usage: 13024 KB (Peak: 13024 KB)
-Simulation CPU Usage: 218 ms

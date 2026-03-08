@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Mar  8 19:11:21 2026
+# Process ID         : 21148
+# Current directory  : C:/Users/Administrator/project_NAT/project_NAT.runs/blk_mem_gen_5_synth_1
+# Command line       : vivado.exe -log blk_mem_gen_5.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source blk_mem_gen_5.tcl
+# Log file           : C:/Users/Administrator/project_NAT/project_NAT.runs/blk_mem_gen_5_synth_1/blk_mem_gen_5.vds
+# Journal file       : C:/Users/Administrator/project_NAT/project_NAT.runs/blk_mem_gen_5_synth_1\vivado.jou
+# Running On         : WINServ25
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Xeon(R) CPU E5-2643 v4 @ 3.40GHz
+# CPU Frequency      : 3392 MHz
+# CPU Physical cores : 12
+# CPU Logical cores  : 24
+# Host memory        : 137324 MB
+# Swap memory        : 20401 MB
+# Total Virtual      : 157725 MB
+# Available Virtual  : 131798 MB
+#-----------------------------------------------------------
+source blk_mem_gen_5.tcl -notrace

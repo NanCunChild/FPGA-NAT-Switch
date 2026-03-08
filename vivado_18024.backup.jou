@@ -1,0 +1,64 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Dec  4 11:50:00 2025
+# Process ID         : 18024
+# Current directory  : C:/Users/Administrator/project_NAT
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent11092 C:\Users\Administrator\project_NAT\project_NAT.xpr
+# Log file           : C:/Users/Administrator/project_NAT/vivado.log
+# Journal file       : C:/Users/Administrator/project_NAT\vivado.jou
+# Running On         : WINServ25
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz
+# CPU Frequency      : 2394 MHz
+# CPU Physical cores : 28
+# CPU Logical cores  : 56
+# Host memory        : 137324 MB
+# Swap memory        : 20401 MB
+# Total Virtual      : 157725 MB
+# Available Virtual  : 147377 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Administrator/project_NAT/project_NAT.xpr
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/Administrator/project_NAT/project_NAT.srcs/sim_1/new/tb_NAT_Inbound.v w ]
+add_files -fileset sim_1 C:/Users/Administrator/project_NAT/project_NAT.srcs/sim_1/new/tb_NAT_Inbound.v
+close [ open C:/Users/Administrator/project_NAT/project_NAT.srcs/sim_1/new/tb_NAT_Outbound.v w ]
+add_files -fileset sim_1 C:/Users/Administrator/project_NAT/project_NAT.srcs/sim_1/new/tb_NAT_Outbound.v
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_NAT_Outbound [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source tb_NAT_Outbound.tcl
+run all
+close_sim
+launch_simulation
+source tb_NAT_Outbound.tcl
+run all
+update_compile_order -fileset sim_1
+set_property source_mgmt_mode DisplayOnly [current_project]
+close_sim
+reset_simulation -simset sim_1 -mode behavioral
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_NAT_Inbound [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+launch_simulation
+source tb_NAT_Inbound.tcl
+run all
+close_sim
+launch_simulation
+source tb_NAT_Inbound.tcl
+run all
+close_sim
