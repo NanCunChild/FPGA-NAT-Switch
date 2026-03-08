@@ -50,9 +50,11 @@ module outbound_rw (
 //Initial
 reg  [9 : 0]  init_addr               ;
 reg           lan_vld_ff              ;
+reg           lan_vld_ff2             ;
 reg           maint_vld_ff            ;
 reg           lookup_start            ;
 reg           lookup_start_ff         ;  
+reg           lookup_start_ff2        ;  
 wire          colldisn                ;
 reg           maint_vld_ff_co         ;
 reg  [ 9: 0]  hash_outbound_maint_ff1 ;
@@ -103,10 +105,13 @@ always @ (posedge clk or negedge rst_n)begin
 end
 
 always @ (posedge clk or negedge rst_n)begin
-    if(~rst_n)
+    if(~rst_n) begin
         lan_vld_ff       <=  1'b0    ;
-    else    
+        lan_vld_ff2      <=  1'b0    ;
+    end else begin
         lan_vld_ff       <=  lan_vld ;
+        lan_vld_ff2      <=  lan_vld_ff;
+    end
 end
 
 always @ (posedge clk or negedge rst_n)begin
@@ -133,18 +138,20 @@ end
 always @ (posedge clk or negedge rst_n)begin
     if(~rst_n) begin
         lookup_start_ff    <= 1'b0 ;
+        lookup_start_ff2   <= 1'b0 ;
         lookup_done        <= 1'b0 ;
     end
     else begin
         lookup_start_ff    <= lookup_start    ;
-        lookup_done        <= lookup_start    ;
+        lookup_start_ff2   <= lookup_start_ff ;
+        lookup_done        <= lookup_start_ff2;
     end
 end
 
 always @ (posedge clk or negedge rst_n)begin
     if(~rst_n)
         lookup_start       <=  1'b0 ;
-    else if (lan_vld_ff)
+    else if (lan_vld_ff2)
         lookup_start       <=  1'b1 ;
     else
         lookup_start       <=  1'b0 ;
@@ -267,7 +274,7 @@ always@(posedge clk or negedge rst_n)begin
         data_a <= 96'b0      ;
         wren_a <= 1'b1       ;
     end  
-    else if (lan_vld_ff) begin
+    else if (lan_vld_ff2) begin
         addr_a <= hash_outbound_lookup ;    
         data_a <= 96'b0                ;           //读
         wren_a <= 1'b0                 ;

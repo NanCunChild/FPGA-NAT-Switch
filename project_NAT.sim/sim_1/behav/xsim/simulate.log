@@ -1,5 +1,6 @@
 Time resolution is 1 ps
-=== [TEST 2] Inbound (WAN->LAN) Test Started ===
+=== Simulation Start ===
+[Time               100000] Reset Released. Waiting for Initialization...
 [Outbound]115000: 0 0 0
 [Inbound]115000: 0 0
 [Outbound]125000: 1 0 0
@@ -2048,28 +2049,13 @@ Time resolution is 1 ps
 [Inbound]10335000: 1022 0
 [Outbound]10345000: 1023 0 0
 [Inbound]10345000: 1023 0
-[Step 1] Pre-requisite: LAN sends packet to establish mapping...
-[Setup] NAT Table Created. Public Port is: 0xe001
-[Outbound]10515000: 377 8080 57345
-[Inbound]10515000: 0 377
-[Step 2] Testing Inbound Traffic...
-         Simulating WAN packet to Port 0xe001 (Expect forward to C0A8010A:1F90)
-================ [DIAGNOSTIC DUMP] ================
-1. RAM Output WAN Port [40:25] = 0xe001
-   Testbench Send Port (ff3)   = 0xe001
----------------------------------------------------
-2. RAM Output Type [23:21]     = 100
-   Testbench Send Type (ff3)   = 100
----------------------------------------------------
-3. RAM Output Valid Bit [24]   = 1
----------------------------------------------------
-FINAL RESULT (out_result_en)   = 1
-===================================================
-[Result] Inbound Lookup Output: IP=0xc0a8010a, Port=0x1f90
-==================================================
- [SUCCESS] Inbound Translation Correct!
-           WAN -> LAN path is working.
-==================================================
-[Outbound]10785000: 377 8080 57345
-[Inbound]10785000: 0 377
-$stop called at time : 10965 ns : File "C:/Users/Administrator/project_NAT/project_NAT.srcs/sim_1/new/tb_NAT_Inbound.v" Line 173
+[Time             10435000] NAT Table Initialized!
+[Time             10435000] Requesting NAT mapping...
+[Time             10515000] Data Detected! Captured: 0xe001
+[Outbound]10545000: 377 8080 57345
+[Inbound]10545000: 0 377
+-------------------------------------------------------
+ [SUCCESS] Test Passed! NAT Assigned Port: 0xe001
+ Explanation: 0xE001 matches expected logic.
+-------------------------------------------------------
+$stop called at time : 10775 ns : File "C:/Users/Administrator/project_NAT/project_NAT.srcs/sim_1/new/tb_NAT_Mgr.v" Line 211

@@ -1,7 +1,7 @@
 Vivado Simulator v2025.1.0
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_11 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_NAT_Inbound_behav xil_defaultlib.tb_NAT_Inbound xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_11 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_NAT_Mgr_behav xil_defaultlib.tb_NAT_Mgr xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -33,6 +33,6 @@ Compiling module xil_defaultlib.RAM_generic_tdp(WIDTH=16)
 Compiling module xil_defaultlib.ram_dp_d1024_w16
 Compiling module xil_defaultlib.nat_top
 Compiling module xil_defaultlib.NAT_Mgr
-Compiling module xil_defaultlib.tb_NAT_Inbound
+Compiling module xil_defaultlib.tb_NAT_Mgr
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_NAT_Inbound_behav
+Built simulation snapshot tb_NAT_Mgr_behav

@@ -43,6 +43,8 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/
 INFO: [VRFC 10-311] analyzing module blk_mem_gen_3
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.gen/sources_1/ip/blk_mem_gen_6/sim/blk_mem_gen_6.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module blk_mem_gen_6
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.gen/sources_1/ip/blk_mem_gen_7/sim/blk_mem_gen_7.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_7
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.srcs/sim_1/new/tb_NAT_Inbound.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_NAT_Inbound
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/project_NAT/project_NAT.srcs/sim_1/new/tb_NAT_Mgr.v" into library xil_defaultlib
