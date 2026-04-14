@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_NAT_Outbound_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_NAT_Outbound" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="10,429.600 ns"></ZoomStartTime>
+      <ZoomEndTime time="10,556.801 ns"></ZoomEndTime>
+      <Cursor1Time time="10,545.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="47" />
+   <wave_markers>
+      <marker label="" time="10435000" />
+      <marker label="" time="10515000" />
+      <marker label="" time="10545000" />
+   </wave_markers>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/rst_n">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/nat_table_init_end">
+      <obj_property name="ElementShortName">nat_table_init_end</obj_property>
+      <obj_property name="ObjectShortName">nat_table_init_end</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/lan_vld">
+      <obj_property name="ElementShortName">lan_vld</obj_property>
+      <obj_property name="ObjectShortName">lan_vld</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/IP_lan">
+      <obj_property name="ElementShortName">IP_lan[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IP_lan[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/TCPPort_lan">
+      <obj_property name="ElementShortName">TCPPort_lan[15:0]</obj_property>
+      <obj_property name="ObjectShortName">TCPPort_lan[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/TCPPort_lan_vld">
+      <obj_property name="ElementShortName">TCPPort_lan_vld</obj_property>
+      <obj_property name="ObjectShortName">TCPPort_lan_vld</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/TCP_lan_flag">
+      <obj_property name="ElementShortName">TCP_lan_flag[2:0]</obj_property>
+      <obj_property name="ObjectShortName">TCP_lan_flag[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/u_NAT_Mgr/inst_nat_top/hash_outbound_lookup">
+      <obj_property name="ElementShortName">hash_outbound_lookup[9:0]</obj_property>
+      <obj_property name="ObjectShortName">hash_outbound_lookup[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/u_NAT_Mgr/inst_nat_top/hash_en">
+      <obj_property name="ElementShortName">hash_en</obj_property>
+      <obj_property name="ObjectShortName">hash_en</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/u_NAT_Mgr/inst_nat_top/wren_a">
+      <obj_property name="ElementShortName">wren_a</obj_property>
+      <obj_property name="ObjectShortName">wren_a</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/u_NAT_Mgr/inst_nat_top/addr_a">
+      <obj_property name="ElementShortName">addr_a[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_a[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/u_NAT_Mgr/inst_nat_top/data_a">
+      <obj_property name="ElementShortName">data_a[95:0]</obj_property>
+      <obj_property name="ObjectShortName">data_a[95:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/Port_lan_NAT">
+      <obj_property name="ElementShortName">Port_lan_NAT[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Port_lan_NAT[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/otb_fifo_empty">
+      <obj_property name="ElementShortName">otb_fifo_empty</obj_property>
+      <obj_property name="ObjectShortName">otb_fifo_empty</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/outbound_ack">
+      <obj_property name="ElementShortName">outbound_ack</obj_property>
+      <obj_property name="ObjectShortName">outbound_ack</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/UDPPort_lan">
+      <obj_property name="ElementShortName">UDPPort_lan[15:0]</obj_property>
+      <obj_property name="ObjectShortName">UDPPort_lan[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/icmpID_lan">
+      <obj_property name="ElementShortName">icmpID_lan[15:0]</obj_property>
+      <obj_property name="ObjectShortName">icmpID_lan[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/UDPPort_lan_vld">
+      <obj_property name="ElementShortName">UDPPort_lan_vld</obj_property>
+      <obj_property name="ObjectShortName">UDPPort_lan_vld</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/icmpID_lan_vld">
+      <obj_property name="ElementShortName">icmpID_lan_vld</obj_property>
+      <obj_property name="ObjectShortName">icmpID_lan_vld</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/TCP_lan_flag_vld">
+      <obj_property name="ElementShortName">TCP_lan_flag_vld</obj_property>
+      <obj_property name="ObjectShortName">TCP_lan_flag_vld</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/outbound_drop">
+      <obj_property name="ElementShortName">outbound_drop</obj_property>
+      <obj_property name="ObjectShortName">outbound_drop</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/TCPPort_wan">
+      <obj_property name="ElementShortName">TCPPort_wan[15:0]</obj_property>
+      <obj_property name="ObjectShortName">TCPPort_wan[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/UDPPort_wan">
+      <obj_property name="ElementShortName">UDPPort_wan[15:0]</obj_property>
+      <obj_property name="ObjectShortName">UDPPort_wan[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/icmpID_wan">
+      <obj_property name="ElementShortName">icmpID_wan[15:0]</obj_property>
+      <obj_property name="ObjectShortName">icmpID_wan[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/TCPPort_wan_vld">
+      <obj_property name="ElementShortName">TCPPort_wan_vld</obj_property>
+      <obj_property name="ObjectShortName">TCPPort_wan_vld</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/UDPPort_wan_vld">
+      <obj_property name="ElementShortName">UDPPort_wan_vld</obj_property>
+      <obj_property name="ObjectShortName">UDPPort_wan_vld</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/icmpID_wan_vld">
+      <obj_property name="ElementShortName">icmpID_wan_vld</obj_property>
+      <obj_property name="ObjectShortName">icmpID_wan_vld</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/wan_vld">
+      <obj_property name="ElementShortName">wan_vld</obj_property>
+      <obj_property name="ObjectShortName">wan_vld</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/TCP_wan_flag">
+      <obj_property name="ElementShortName">TCP_wan_flag[2:0]</obj_property>
+      <obj_property name="ObjectShortName">TCP_wan_flag[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/TCP_wan_flag_vld">
+      <obj_property name="ElementShortName">TCP_wan_flag_vld</obj_property>
+      <obj_property name="ObjectShortName">TCP_wan_flag_vld</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/inbound_ack">
+      <obj_property name="ElementShortName">inbound_ack</obj_property>
+      <obj_property name="ObjectShortName">inbound_ack</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/inbound_drop">
+      <obj_property name="ElementShortName">inbound_drop</obj_property>
+      <obj_property name="ObjectShortName">inbound_drop</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/Port_wan_NAT">
+      <obj_property name="ElementShortName">Port_wan_NAT[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Port_wan_NAT[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/IP_wan_NAT">
+      <obj_property name="ElementShortName">IP_wan_NAT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IP_wan_NAT[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/inbound_fail">
+      <obj_property name="ElementShortName">inbound_fail</obj_property>
+      <obj_property name="ObjectShortName">inbound_fail</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/ib_fifo_empty">
+      <obj_property name="ElementShortName">ib_fifo_empty</obj_property>
+      <obj_property name="ObjectShortName">ib_fifo_empty</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/ram_dp_cfg_register">
+      <obj_property name="ElementShortName">ram_dp_cfg_register[11:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_dp_cfg_register[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/ram_2p_cfg_register">
+      <obj_property name="ElementShortName">ram_2p_cfg_register[9:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_2p_cfg_register[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/rf_2p_cfg_register">
+      <obj_property name="ElementShortName">rf_2p_cfg_register[6:0]</obj_property>
+      <obj_property name="ObjectShortName">rf_2p_cfg_register[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/np_cpu_data_in">
+      <obj_property name="ElementShortName">np_cpu_data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">np_cpu_data_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/np_cpu_addr">
+      <obj_property name="ElementShortName">np_cpu_addr[18:0]</obj_property>
+      <obj_property name="ObjectShortName">np_cpu_addr[18:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/np_cpu_ctr">
+      <obj_property name="ElementShortName">np_cpu_ctr[1:0]</obj_property>
+      <obj_property name="ObjectShortName">np_cpu_ctr[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/np_cpu_data_out">
+      <obj_property name="ElementShortName">np_cpu_data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">np_cpu_data_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_NAT_Outbound/data_out_vld">
+      <obj_property name="ElementShortName">data_out_vld</obj_property>
+      <obj_property name="ObjectShortName">data_out_vld</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/timeout_cnt">
+      <obj_property name="ElementShortName">timeout_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">timeout_cnt[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_NAT_Outbound/assigned_public_port">
+      <obj_property name="ElementShortName">assigned_public_port[15:0]</obj_property>
+      <obj_property name="ObjectShortName">assigned_public_port[15:0]</obj_property>
+   </wvobject>
+</wave_config>
