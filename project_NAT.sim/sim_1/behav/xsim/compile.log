@@ -1,0 +1,12 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nancunchild/class_related/Graduation_Design/project_NAT/project_NAT.srcs/sources_1/new/top_define.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nancunchild/class_related/Graduation_Design/project_NAT/project_NAT.srcs/sources_1/new/top_define.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nancunchild/class_related/Graduation_Design/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_manager/avail_ppool.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module avail_ppool
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nancunchild/class_related/Graduation_Design/project_NAT/project_NAT.srcs/sources_1/imports/source_code/nat_table/nat_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nat_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nancunchild/class_related/Graduation_Design/project_NAT/project_NAT.srcs/sim_1/new/tb_NAT_Inbound.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_NAT_Inbound
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nancunchild/class_related/Graduation_Design/project_NAT/project_NAT.srcs/sim_1/new/tb_NAT_Mgr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_NAT_Mgr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nancunchild/class_related/Graduation_Design/project_NAT/project_NAT.srcs/sim_1/new/tb_NAT_Outbound.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_NAT_Outbound

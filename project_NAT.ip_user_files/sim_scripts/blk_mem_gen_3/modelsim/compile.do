@@ -2,23 +2,23 @@ vlib modelsim_lib/work
 vlib modelsim_lib/msim
 
 vlib modelsim_lib/msim/xpm
-vlib modelsim_lib/msim/blk_mem_gen_v8_4_11
+vlib modelsim_lib/msim/blk_mem_gen_v8_4_12
 vlib modelsim_lib/msim/xil_defaultlib
 
 vmap xpm modelsim_lib/msim/xpm
-vmap blk_mem_gen_v8_4_11 modelsim_lib/msim/blk_mem_gen_v8_4_11
+vmap blk_mem_gen_v8_4_12 modelsim_lib/msim/blk_mem_gen_v8_4_12
 vmap xil_defaultlib modelsim_lib/msim/xil_defaultlib
 
-vlog -work xpm  -incr -mfcu  -sv "+incdir+../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" \
-"C:/Xilinx/2025.1/Vivado/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+vlog -work xpm -64 -incr -mfcu  -sv "+incdir+../../../../../../../Xilinx/2025.2/data/rsb/busdef" \
+"/home/nancunchild/Xilinx/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
-vcom -work xpm  -93  \
-"C:/Xilinx/2025.1/Vivado/data/ip/xpm/xpm_VCOMP.vhd" \
+vcom -work xpm -64 -93  \
+"/home/nancunchild/Xilinx/2025.2/data/ip/xpm/xpm_VCOMP.vhd" \
 
-vlog -work blk_mem_gen_v8_4_11  -incr -mfcu  "+incdir+../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" \
+vlog -work blk_mem_gen_v8_4_12 -64 -incr -mfcu  "+incdir+../../../../../../../Xilinx/2025.2/data/rsb/busdef" \
 "../../../ipstatic/simulation/blk_mem_gen_v8_4.v" \
 
-vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" \
+vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../../../../Xilinx/2025.2/data/rsb/busdef" \
 "../../../../project_NAT.gen/sources_1/ip/blk_mem_gen_3/sim/blk_mem_gen_3.v" \
 
 

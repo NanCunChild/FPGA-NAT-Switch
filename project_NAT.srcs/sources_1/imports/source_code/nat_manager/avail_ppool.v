@@ -1,28 +1,5 @@
 `include "top_define.v"
-// **************************************************************
-// COPYRIGHT(c)2024, Xidian University
-// All rights reserved.
-//
-// IP LIB INDEX      :  
-// IP Name           :  
-// File name         :  avail_ppool.v 
-// Module name       :  avail_ppool
-//
-// Full name         :   
-// Author            :   Chen Dilong
-// Email             :   1523245790@qq.com
-// Data              :   2024/4/23
-// Version           : V 1.0 
-// 
-// Abstract          : available port number pool for TCP,UDP,ICMP echo in NAT 
-// Called by         : Father Module
-// 
-// Modification history
-// ------------------------------------------------------------------------------------------------------
-// //
-// $Log$
-//
-// *********************************************************************
+
 module avail_ppool  
  (
     input  wire            clk              ,
