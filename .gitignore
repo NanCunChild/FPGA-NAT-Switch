@@ -1,5 +1,6 @@
 project_NAT.cache/
 project_NAT.runs/
 project_NAT.gen/
+project_NAT.sim/
 project_NAT.hw/
 vivado*.log
