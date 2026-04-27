@@ -36,7 +36,7 @@ module tb_NAT_Inbound;
     integer timeout_cnt;
     reg [15:0] expected_public_port; // 记录系统分配的公网端口，用于回包测试
 
-    // --- 2. 实例化 DUT ---
+    // --- 实例化 DUT ---
     NAT_Mgr u_NAT_Mgr (
         .clk(clk), .rst_n(rst_n),
         .IP_lan(IP_lan), .TCPPort_lan(TCPPort_lan), .UDPPort_lan(UDPPort_lan), .icmpID_lan(icmpID_lan),
@@ -56,7 +56,7 @@ module tb_NAT_Inbound;
         .np_cpu_data_out(np_cpu_data_out), .data_out_vld(data_out_vld)
     );
 
-    // --- 3. 时钟 ---
+    // --- 时钟 ---
     initial begin clk = 0; forever #5 clk = ~clk; end
 
     // --- 4. 测试流程 ---

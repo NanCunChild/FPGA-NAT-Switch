@@ -1,0 +1,7 @@
+verilog xil_defaultlib -i "../../../../../../../Xilinx/2025.2/data/rsb/busdef" --include "../../../../project_NAT.gen/sources_1/ip/vio_nat/hdl/verilog" --include "../../../../project_NAT.gen/sources_1/ip/vio_nat/hdl" \
+"../../../../project_NAT.gen/sources_1/ip/vio_nat/sim/vio_nat.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

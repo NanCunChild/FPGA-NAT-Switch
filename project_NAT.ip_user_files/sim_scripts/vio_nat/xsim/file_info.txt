@@ -1,0 +1,2 @@
+vio_nat.v,verilog,xil_defaultlib,../../../../project_NAT.gen/sources_1/ip/vio_nat/sim/vio_nat.v,incdir="../../../../../../../Xilinx/2025.2/data/rsb/busdef"incdir="../../../../project_NAT.gen/sources_1/ip/vio_nat/hdl/verilog"incdir="../../../../project_NAT.gen/sources_1/ip/vio_nat/hdl"
+glbl.v,Verilog,xil_defaultlib,glbl.v

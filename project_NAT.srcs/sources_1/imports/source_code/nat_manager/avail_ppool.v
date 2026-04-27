@@ -7,7 +7,7 @@ module avail_ppool
     //acquire signals
     output wire [9  : 0]   number_avail     ,
     input  wire            port_use_ack     , 
-//recycle  signals  
+    //recycle  signals  
     input  wire [9  : 0]   number_rec       ,
     input  wire            number_rec_vld   ,
 
@@ -86,7 +86,9 @@ always @ (posedge clk or negedge rst_n)begin
           endcase
           end
 end
+
 `ifdef DEBUG
+`ifdef HAS_ILA_IP
 reg [31 :0] wr_en_cnt ;
 reg [31 :0] port_use_ack_cnt ;
 
@@ -116,6 +118,7 @@ ila_avail_pool  inst_avail_pool
 	.probe3 (port_use_ack_cnt),
 	.probe4 (nat_map_cnt)
 );
+`endif
 `endif 
 
 `ifdef ASIC
