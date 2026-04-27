@@ -10,6 +10,7 @@ vmap blk_mem_gen_v8_4_12 questa_lib/msim/blk_mem_gen_v8_4_12
 vmap xil_defaultlib questa_lib/msim/xil_defaultlib
 
 vlog -work xpm -64 -incr -mfcu  -sv "+incdir+../../../../../../../Xilinx/2025.2/data/rsb/busdef" \
+"/home/nancunchild/Xilinx/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
 "/home/nancunchild/Xilinx/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm -64 -93  \
@@ -20,7 +21,6 @@ vlog -work blk_mem_gen_v8_4_12 -64 -incr -mfcu  "+incdir+../../../../../../../Xi
 
 vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../../../../Xilinx/2025.2/data/rsb/busdef" \
 "../../../../project_NAT.gen/sources_1/ip/blk_mem_gen_2/sim/blk_mem_gen_2.v" \
-
 
 vlog -work xil_defaultlib \
 "glbl.v"

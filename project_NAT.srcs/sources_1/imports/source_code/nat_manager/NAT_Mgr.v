@@ -8,9 +8,9 @@
 // Module name       :   NAT_Mgr
 // Full name         :   
 //
-// Author            :   Chen Dilong 
-// Email             :   1523245790@qq.com
-// Data              :   2024/4/23
+// Author            :   
+// Email             :   
+// Data              :   
 // Version           : V 1.0 
 // 
 // Abstract          :  distribute and reserve and release 

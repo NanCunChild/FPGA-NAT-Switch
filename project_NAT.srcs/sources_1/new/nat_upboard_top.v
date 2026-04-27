@@ -2,14 +2,14 @@
 // File: nat_upboard_top.v
 // Description: 
 //   NAT 模块上板验证顶层。
-//   通过 VIO（Virtual I/O）从 Vivado Hardware Manager 注入
-//   测试激励，通过 ILA 抓取 NAT_Mgr 内部信号。
+//   通过 VIO 注入测试激励，通过 ILA 抓取 NAT_Mgr 内部信号。
 //   不依赖外部以太网接口，专用于验证 NAT 核心逻辑的硬件
 //   功能正确性。
 // 
 // Clock:
-//   sys_clk: 200 MHz 差分晶振 (BADJ_CLK1_P/N)
-//   nat_clk: 125 MHz (由 MMCM 从 sys_clk 分频得到)
+//   sys_clk_p/n: 200 MHz 差分晶振 (BADJ_CLK1_P/N)
+//   nat_clk:     125 MHz (由 clk_wiz_0 从 sys_clk 分频得到)
+//   复位:        无外部按钮, 由 MMCM locked 信号自动产生
 // =============================================================
 `timescale 1ns / 1ps
 
@@ -17,39 +17,26 @@ module nat_upboard_top (
     // 板载 200 MHz 差分晶振
     input  wire sys_clk_p,
     input  wire sys_clk_n
-    // 板载复位按钮（高电平复位，需取反；如果板子是低电平复位则去掉取反）
-    // input  wire sys_rst
 );
 
     // =========================================================
     // 时钟与复位
     // =========================================================
-    wire sys_clk_buf;       // 200 MHz 单端时钟（IBUFDS 输出）
-    wire nat_clk;           // 125 MHz NAT 工作时钟（MMCM 输出）
+    wire nat_clk;           // 125 MHz NAT 工作时钟
     wire mmcm_locked;       // MMCM 锁定指示
     wire rst_n_sync;        // 同步释放的复位信号
 
-    // 差分时钟缓冲
-    IBUFDS #(
-        .DIFF_TERM("FALSE"),
-        .IBUF_LOW_PWR("FALSE"),
-        .IOSTANDARD("LVDS")
-    ) u_ibufds_sysclk (
-        .I  (sys_clk_p),
-        .IB (sys_clk_n),
-        .O  (sys_clk_buf)
-    );
-
-    // MMCM: 200 MHz → 125 MHz
-    // 用 Vivado 的 Clocking Wizard IP 生成（见后文说明）
+    // MMCM: 200 MHz 差分输入 -> 125 MHz 单端输出
+    // 注意: clk_wiz_0 在差分模式下内部已包含 IBUFDS, 无需外部缓冲器
     clk_wiz_0 u_clk_wiz (
-        .clk_in1  (sys_clk_buf),
-        .reset    (1'b0),
-        .locked   (mmcm_locked),
-        .clk_out1 (nat_clk)
+        .clk_in1_p (sys_clk_p),
+        .clk_in1_n (sys_clk_n),
+        .reset     (1'b0),
+        .locked    (mmcm_locked),
+        .clk_out1  (nat_clk)
     );
 
-    // 复位同步释放：MMCM 锁定后才释放复位
+    // 复位同步释放: MMCM 锁定后才释放复位
     reg [3:0] rst_sync_reg = 4'b0000;
     always @(posedge nat_clk or negedge mmcm_locked) begin
         if (!mmcm_locked)
@@ -60,7 +47,7 @@ module nat_upboard_top (
     assign rst_n_sync = rst_sync_reg[3];
 
     // =========================================================
-    // VIO 输出信号（由 VIO IP 驱动，可在 Hardware Manager 设置）
+    // VIO 输出信号 (由 VIO IP 驱动, 在 Hardware Manager 设置)
     // =========================================================
     // 出网通路输入
     wire [31:0] vio_IP_lan;
@@ -89,18 +76,18 @@ module nat_upboard_top (
     wire        vio_inbound_ack;
     wire        vio_inbound_drop;
 
-    // 配置寄存器（保持默认值即可）
+    // 配置寄存器 (保持默认值)
     wire [11:0] vio_ram_dp_cfg_register;
     wire [9:0]  vio_ram_2p_cfg_register;
     wire [6:0]  vio_rf_2p_cfg_register;
 
-    // CPU 配置接口（可暂时不用，固定为 0）
+    // CPU 配置接口 (本次验证不使用, 固定为 0)
     wire [31:0] vio_np_cpu_data_in;
     wire [18:0] vio_np_cpu_addr;
     wire [1:0]  vio_np_cpu_ctr;
 
     // =========================================================
-    // NAT_Mgr 输出信号（供 VIO 监测和 ILA 抓取）
+    // NAT_Mgr 输出信号 (供 VIO 监测和 ILA 抓取)
     // =========================================================
     wire [15:0] Port_lan_NAT;
     wire        otb_fifo_empty;
@@ -115,11 +102,17 @@ module nat_upboard_top (
     // =========================================================
     // VIO 例化
     // =========================================================
-    // VIO IP 的输入/输出宽度需要在 IP Catalog 里配置匹配
-    // 详见 README 配置说明
     vio_nat u_vio (
         .clk           (nat_clk),
-        // VIO 输出（probe_out）：由 Hardware Manager 设置，输入到 NAT_Mgr
+        // VIO 输入 (probe_in): 由 NAT_Mgr 输出, 在 Hardware Manager 中观测
+        .probe_in0     (Port_lan_NAT),
+        .probe_in1     (otb_fifo_empty),
+        .probe_in2     (Port_wan_NAT),
+        .probe_in3     (IP_wan_NAT),
+        .probe_in4     (inbound_fail),
+        .probe_in5     (ib_fifo_empty),
+        .probe_in6     (nat_table_init_end),
+        // VIO 输出 (probe_out): 由 Hardware Manager 设置, 输入到 NAT_Mgr
         .probe_out0    (vio_IP_lan),
         .probe_out1    (vio_TCPPort_lan),
         .probe_out2    (vio_UDPPort_lan),
@@ -142,18 +135,10 @@ module nat_upboard_top (
         .probe_out19   (vio_TCP_wan_flag),
         .probe_out20   (vio_TCP_wan_flag_vld),
         .probe_out21   (vio_inbound_ack),
-        .probe_out22   (vio_inbound_drop),
-        // VIO 输入（probe_in）：由 NAT_Mgr 输出，在 Hardware Manager 中观测
-        .probe_in0     (Port_lan_NAT),
-        .probe_in1     (otb_fifo_empty),
-        .probe_in2     (Port_wan_NAT),
-        .probe_in3     (IP_wan_NAT),
-        .probe_in4     (inbound_fail),
-        .probe_in5     (ib_fifo_empty),
-        .probe_in6     (nat_table_init_end)
+        .probe_out22   (vio_inbound_drop)
     );
 
-    // 配置寄存器固定为 0（默认配置）
+    // 配置寄存器固定为 0 (默认配置)
     assign vio_ram_dp_cfg_register = 12'b0;
     assign vio_ram_2p_cfg_register = 10'b0;
     assign vio_rf_2p_cfg_register  = 7'b0;
@@ -212,8 +197,8 @@ module nat_upboard_top (
         .data_out_vld       (data_out_vld)
     );
 
-    // 注意：原有 NAT 模块内部 `ifdef DEBUG 保护的 ILA
+    // 注意: 原有 NAT 模块内部 `ifdef DEBUG 保护的 ILA
     // (ila_nat_lookup_result, ila_nat_cfg, ila_map_cnt, ila_avail_pool)
-    // 会在 DEBUG 宏开启时自动综合进来，无需在此重复例化
+    // 会在 DEBUG 宏开启时自动综合进来, 无需在此重复例化
 
 endmodule

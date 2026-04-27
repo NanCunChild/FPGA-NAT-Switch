@@ -13,6 +13,7 @@ vmap blk_mem_gen_v8_4_12 riviera/blk_mem_gen_v8_4_12
 vmap xil_defaultlib riviera/xil_defaultlib
 
 vlog -work xpm  -incr "+incdir+../../../../../../../Xilinx/2025.2/data/rsb/busdef" -l xpm -l blk_mem_gen_v8_4_12 -l xil_defaultlib \
+"/home/nancunchild/Xilinx/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
 "/home/nancunchild/Xilinx/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm -93  -incr \
@@ -23,7 +24,6 @@ vlog -work blk_mem_gen_v8_4_12  -incr -v2k5 "+incdir+../../../../../../../Xilinx
 
 vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../../../../Xilinx/2025.2/data/rsb/busdef" -l xpm -l blk_mem_gen_v8_4_12 -l xil_defaultlib \
 "../../../../project_NAT.gen/sources_1/ip/blk_mem_gen_3/sim/blk_mem_gen_3.v" \
-
 
 vlog -work xil_defaultlib \
 "glbl.v"
